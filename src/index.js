@@ -785,7 +785,7 @@ async function fetchSeriesEpisodes(serverBase, seriesId, seasonId, apiKey) {
     }));
 
     // Sort episodes by index number for consistent ordering
-    episodes.sort((a, b) => a.indexNumber - b.indexNumber);
+    episodes.sort((a, b) => b.indexNumber - a.indexNumber);
 
     debugLog(
       `Fetched ${episodes.length} episodes from series: ${episodes.map((e) => `E${e.indexNumber}`).join(', ')}`
@@ -1239,7 +1239,7 @@ function getStoredJellyfinSession() {
     const maxAge = preferences.get('session_max_age_hours') || 24;
     const sessionAge = (Date.now() - timestamp) / (1000 * 60 * 60); // hours
 
-    if (sessionAge > maxAge) {
+    if (!preferences.get('session_permanent') && sessionAge > maxAge) {
       debugLog(`Session too old (${sessionAge.toFixed(1)} hours), clearing`);
       clearJellyfinSession();
       return null;
