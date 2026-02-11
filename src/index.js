@@ -917,7 +917,7 @@ async function addEpisodesToPlaylist(
         // Add to playlist - IINA will display whatever it can extract from the URL
         // Note: IINA's playlist UI has limitations and may only show URLs regardless of title parameter
         try {
-          playlist.add(episode.playUrl, playlist.count);
+          playlist.add(episode.playUrl, 0);
           debugLog(`Added episode: ${episode.playUrl}`);
         } catch (error) {
           debugLog(`Failed to add episode: ${error.message}`);
