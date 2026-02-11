@@ -1,7 +1,7 @@
 {
   "name": "Jellyfin",
   "identifier": "gay.lemmaeof.iina-jellyfin",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Jellyfin plugin for IINA, enabling seamless media playback and subtitle management. (Lemma test fork)",
   "author": {
     "name": "Mateusz Hajder",

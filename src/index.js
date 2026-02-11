@@ -785,7 +785,7 @@ async function fetchSeriesEpisodes(serverBase, seriesId, seasonId, apiKey) {
     }));
 
     // Sort episodes by index number for consistent ordering
-    episodes.sort((a, b) => b.indexNumber - a.indexNumber);
+    episodes.sort((a, b) => a.indexNumber - b.indexNumber);
 
     debugLog(
       `Fetched ${episodes.length} episodes from series: ${episodes.map((e) => `E${e.indexNumber}`).join(', ')}`
@@ -917,7 +917,7 @@ async function addEpisodesToPlaylist(
         // Add to playlist - IINA will display whatever it can extract from the URL
         // Note: IINA's playlist UI has limitations and may only show URLs regardless of title parameter
         try {
-          playlist.add(episode.playUrl);
+          playlist.add(episode.playUrl, playlist.count);
           debugLog(`Added episode: ${episode.playUrl}`);
         } catch (error) {
           debugLog(`Failed to add episode: ${error.message}`);
