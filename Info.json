@@ -1,8 +1,8 @@
 {
   "name": "Jellyfin",
-  "identifier": "com.mhajder.iina-jellyfin",
-  "version": "0.4.0",
-  "description": "Jellyfin plugin for IINA, enabling seamless media playback and subtitle management.",
+  "identifier": "gay.lemmaeof.iina-jellyfin",
+  "version": "0.4.1",
+  "description": "Jellyfin plugin for IINA, enabling seamless media playback and subtitle management. (Lemma test fork)",
   "author": {
     "name": "Mateusz Hajder",
     "url": "https://github.com/mhajder"
@@ -31,9 +31,10 @@
     "open_in_new_window": true,
     "auto_login_enabled": true,
     "session_max_age_hours": 24,
+    "session_permanent": false,
     "autoplay_next_episode": true,
     "sync_playback_progress": true
   },
-  "ghRepo": "mhajder/iina-jellyfin",
+  "ghRepo": "lemmaeof/iina-jellyfin",
   "ghVersion": 5
 }
